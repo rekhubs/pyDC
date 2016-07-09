@@ -112,8 +112,13 @@ class Calc:
 if __name__ == '__main__':
     # init stack
     stkMng = StackMng([])
+    splittedArgs = sys.argv[1].split(" ")
+    print splittedArgs
     # print type(sys.argv)
-    for arg in sys.argv[1:]:
+    for arg in splittedArgs:
+        if arg == " " or arg == '':
+            continue
+
         print arg
         stkMng.operate(processArg(arg))
         print stkMng.stack
